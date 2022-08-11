@@ -1,0 +1,6 @@
+com/typicode/jsonplaceholder/VerifyEmailFormat.class
+com/typicode/jsonplaceholder/GetPostComments.class
+utils/TestData.class
+com/typicode/jsonplaceholder/PostUser.class
+com/typicode/jsonplaceholder/GetUsers.class
+com/typicode/jsonplaceholder/GetUserPosts.class

@@ -1,0 +1,72 @@
+version: 2
+
+jobs:
+
+  build:
+
+    docker:
+
+      # specify the version you desire here
+
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/TestProjectFreeNow
+
+    environment:
+
+      # Customize the JVM maximum heap limit
+
+      MAVEN_OPTS: -Xmx3200m
+
+    steps:
+
+      - checkout
+
+      # Download and cache dependencies
+
+
+      - restore_cache:
+
+          keys:
+
+            - v1-dependencies-{{ checksum "pom.xml" }}
+
+            # fallback to using the latest cache if no exact match is found
+
+            - v1-dependencies-
+
+
+      - run: mvn dependency:go-offline
+
+
+
+      - run:
+
+          name: Running X virtual framebuffer
+
+          command: Xvfb :0 -ac &
+
+
+      - save_cache:
+
+          paths:
+
+            - ~/.m2
+
+          key: v1-dependencies-{{ checksum "pom.xml" }}
+
+
+      # run tests!
+
+      - run: mvn clean test
+
+
+      - store_artifacts:
+
+          path: target/surefire-reports
+
+          destination: tr1
+
+      - store_test_results:
+
+          path: target/surefire-reports

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="com.typicode.jsonplaceholder.tests.TestSuit" duration-ms="14450" started-at="2022-08-10T11:22:47Z" finished-at="2022-08-10T11:23:01Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="14450" started-at="2022-08-10T11:22:47Z" finished-at="2022-08-10T11:23:01Z">
+      <class name="com.typicode.jsonplaceholder.tests.TestSuit">
+        <test-method status="PASS" signature="VerifyUserDataWorkingProperly()[pri:0, instance:com.typicode.jsonplaceholder.tests.TestSuit@6615435c]" name="VerifyUserDataWorkingProperly" duration-ms="4084" started-at="2022-08-10T11:22:47Z" description="Verify that the field object is not empty" finished-at="2022-08-10T11:22:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyUserDataWorkingProperly -->
+        <test-method status="PASS" signature="VerifyUserID()[pri:1, instance:com.typicode.jsonplaceholder.tests.TestSuit@6615435c]" name="VerifyUserID" duration-ms="1137" started-at="2022-08-10T11:22:51Z" description="Verify that the Data object is not empty" finished-at="2022-08-10T11:22:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyUserID -->
+        <test-method status="PASS" signature="VerifyUsersPostsAreShowing()[pri:3, instance:com.typicode.jsonplaceholder.tests.TestSuit@6615435c]" name="VerifyUsersPostsAreShowing" duration-ms="918" started-at="2022-08-10T11:22:52Z" description="Verify that the Count is not empty" finished-at="2022-08-10T11:22:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyUsersPostsAreShowing -->
+        <test-method status="PASS" signature="VerifyEmailFormatIsOk()[pri:4, instance:com.typicode.jsonplaceholder.tests.TestSuit@6615435c]" name="VerifyEmailFormatIsOk" duration-ms="8268" started-at="2022-08-10T11:22:53Z" description="Verify that all the filter values are available" finished-at="2022-08-10T11:23:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyEmailFormatIsOk -->
+      </class> <!-- com.typicode.jsonplaceholder.tests.TestSuit -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.typicode.jsonplaceholder.tests.TestSuit -->
+</testng-results>

@@ -51,13 +51,13 @@ jobs:
 
       - store_artifacts:
 
-          path: target
+          path: test-output/testReport.html
 
           destination: tr1
 
       - store_test_results:
 
-          path: test-output/output.html
+          path: test-output/testReport.html
 
           
 

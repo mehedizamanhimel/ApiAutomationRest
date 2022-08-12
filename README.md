@@ -5,8 +5,9 @@ Sample Api automation test framework using Rest-Assured with Java and TestNG
 To run the project in your command line in local pc:
 1. Download the project.
 2. Install maven from web or via command line (npm install maven/brew install maven)
-3. copy the directory of the project folder by "cd (project folder)"
-4. use the command "mvn clean install" or "mvn test" or "mvn clean test"
+3. Open Terminal/Command line Interface.
+4. copy the directory of the project folder by "cd (project folder)"
+5. use the command "mvn clean install" or "mvn test" or "mvn clean test"
 
 
 For running the project in your local machine via IDE:
@@ -38,12 +39,16 @@ _Before execution:_
 
 
 _During execution:_
-- Execution can be done by running SearchTest class.
+- Execution can be done by running TestSuit class.
 - testng xml file has been created with SearchTest class, from where tests can be executed as well.
-- Comment has been added for each step, including page factory classed as well.
 - Browser can be set and change from properties file, including headless browsers as well.
 
 _After execution:_
 - Results are showing in consoles.
 - Extent reports will be found in project>test-output>testReport.html. Open it on any browser for full detail report.
 
+
+Running the project via CircleCI
+1. Go to CircleCI product page for this project ("https://app.circleci.com/pipelines/github/mehedizamanhimel/ApiAutomationFreeNow)
+2. Run or rerun the workflow
+3. 

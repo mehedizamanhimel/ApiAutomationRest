@@ -57,7 +57,7 @@ jobs:
 
       - store_test_results:
 
-          path: test-output
+          path: test-output/output.html
 
           
 

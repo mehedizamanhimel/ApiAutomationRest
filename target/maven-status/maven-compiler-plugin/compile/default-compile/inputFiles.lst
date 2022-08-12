@@ -1,6 +1,6 @@
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/com/typicode/jsonplaceholder/GetUserPosts.java
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/utils/TestData.java
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/com/typicode/jsonplaceholder/GetUsers.java
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/com/typicode/jsonplaceholder/VerifyEmailFormat.java
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/com/typicode/jsonplaceholder/PostUser.java
-/Users/mehedizamanhimel/Documents/GitHub/TestWebAutomation/ApiAutomationFreeNow/src/main/java/com/typicode/jsonplaceholder/GetPostComments.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/utils/TestData.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/com/typicode/jsonplaceholder/GetUsers.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/com/typicode/jsonplaceholder/PostUser.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/com/typicode/jsonplaceholder/GetPostComments.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/com/typicode/jsonplaceholder/VerifyEmailFormat.java
+/Users/mehedizamanhimel/Documents/FreeNowApi/src/main/java/com/typicode/jsonplaceholder/GetUserPosts.java

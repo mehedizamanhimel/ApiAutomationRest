@@ -1,4 +1,4 @@
-# ApiAutomationFreeNow
+# ApiAutomationRest
 Sample Api automation test framework using Rest-Assured with Java and TestNG
 
 
@@ -47,8 +47,3 @@ _After execution:_
 - Results are showing in consoles.
 - Extent reports will be found in project>test-output>testReport.html. Open it on any browser for full detail report.
 
-
-Running the project via CircleCI
-1. Go to CircleCI product page for this project ("https://app.circleci.com/pipelines/github/mehedizamanhimel/ApiAutomationFreeNow)
-2. Run or rerun the workflow
-3. 

@@ -1,9 +1,5 @@
-FROM maven:3.8.4-jdk-8
-RUN mkdir -p /usr/src/app/testautomation
-WORKDIR /usr/src/app/testautomation
-ADD . /usr/src/app/testautomation
-
+FROM maven:3.9.6-eclipse-temurin-11
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+COPY . /usr/src/app
 RUN mvn clean test
-
-
-

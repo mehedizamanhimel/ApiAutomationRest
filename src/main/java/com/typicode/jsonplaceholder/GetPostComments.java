@@ -1,125 +1,59 @@
 package com.typicode.jsonplaceholder;
 
+import com.typicode.jsonplaceholder.utils.RequestSpecProvider;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-import utils.TestData;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class GetPostComments {
 
+    private static final Logger logger = LogManager.getLogger(GetPostComments.class);
 
-    public GetPostComments() {
+    private JsonPath jsonResponse;
 
-    }
+    public List<Integer> user;
+    public List<String> name;
+    public List<String> email;
+    public List<String> body;
 
+    public void getPostCommentDetails(int postID) {
+        String path = "/posts/" + postID + "/comments";
+        logger.info("Fetching comments for postId={}", postID);
+        jsonResponse = new JsonPath(
+                RestAssured.given()
+                        .spec(RequestSpecProvider.get())
+                        .basePath(path)
+                        .log().all()
+                        .when()
+                        .get()
+                        .asString()
+        );
 
-    JsonPath jsonResponse;
-
-    static TestData testData;
-
-    //public ArrayList<Integer> postID;
-    public ArrayList<Integer> user;
-    public ArrayList<String> name;
-    public ArrayList<String> email;
-    public ArrayList<String> body;
-
-    //Http client for base api and storing the fields & data as an arrayList
-
-    public void getPostCommentDetails(int postID) throws IOException {
-        testData = new TestData();
-
-        RestAssured.baseURI = testData.properties.getProperty("baseUrl");
-        RestAssured.basePath = "/posts/"+postID+"/comments";
-
-        jsonResponse = new JsonPath(RestAssured.given()
-
-                .contentType("application/json")
-                .log()
-                .all()
-                .when()
-                .get()
-                .asString());
-
-        jsonResponse.prettyPrint();
-
-        //postID = new ArrayList<>(jsonResponse.getList("postId"));
-        user = new ArrayList<>(jsonResponse.getList("id"));
-        name = new ArrayList<>(jsonResponse.getList("name"));
+        user  = new ArrayList<>(jsonResponse.getList("id"));
+        name  = new ArrayList<>(jsonResponse.getList("name"));
         email = new ArrayList<>(jsonResponse.getList("email"));
-        body = new ArrayList<>(jsonResponse.getList("body"));
-
-
+        body  = new ArrayList<>(jsonResponse.getList("body"));
     }
 
-
-
-    public void getPostCommentDetails_WithStatusCode(int postID, int StatusCode) throws IOException {
-
-        testData = new TestData();
-
-        RestAssured.baseURI = testData.properties.getProperty("baseUrl");
-        RestAssured.basePath = "/posts/"+postID+"/comments";
+    public void getPostCommentDetails_WithStatusCode(int postID, int statusCode) {
+        logger.info("Asserting status code {} for postId={}", statusCode, postID);
         RestAssured.given()
-                .then()
-                .log()
-                .all()
+                .spec(RequestSpecProvider.get())
+                .basePath("/posts/" + postID + "/comments")
+                .log().all()
                 .when()
                 .get()
                 .then()
+                .log().all()
                 .assertThat()
-                .statusCode(StatusCode);
-
+                .statusCode(statusCode);
     }
 
-    public Object getData() {
-
-        return jsonResponse.get();
-    }
-
-    public int getPostID() {
-
-        return Integer.parseInt(jsonResponse.getString("postId"));
-    }
-
-    public int getUserID() {
-
-        return Integer.parseInt(jsonResponse.getString("id"));
-    }
-
-    public String getPostTitle() {
-
-        return jsonResponse.getString("name");
-    }
-
-    public ArrayList getEmail() {
-
-        return email;
-    }
-
-    public boolean verifyEmail(){
-        String regex = "^(.+)@(.+)$";
-        Pattern pattern = Pattern.compile(regex);
-        for(String singeEmail : email){
-            //Create instance of matcher
-            Matcher matcher = pattern.matcher(singeEmail);
-            //System.out.println(singeEmail +" : "+ matcher.matches()+"\n");
-            return true;
-        }
-
-        return false;
-
-    }
-
-
-    // internet.catalog_id
-
-    // internet.pack_type
-    // internet.pack_sub_type internet_details.type internet_details.label internet_details
-
-
+    public List<String> getEmail() { return email; }
+    public List<String> getName()  { return name; }
+    public List<String> getBody()  { return body; }
 }
